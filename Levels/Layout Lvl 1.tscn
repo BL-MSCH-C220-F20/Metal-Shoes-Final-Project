@@ -469,37 +469,61 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -6
 position = Vector2( 1005.21, 555.228 )
 rotation = 0.13439
 scale = Vector2( 0.340362, 0.535467 )
+<<<<<<< Updated upstream
 frames = SubResource( 39 )
+=======
+frames = SubResource( 40 )
+frame = 23
+>>>>>>> Stashed changes
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 935.286, 552.049 )
 rotation = 0.13439
 scale = Vector2( 0.340362, 0.535467 )
+<<<<<<< Updated upstream
 frames = SubResource( 39 )
 frame = 24
+=======
+frames = SubResource( 40 )
+frame = 22
+>>>>>>> Stashed changes
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 883.372, 536.157 )
 rotation = -0.136136
 scale = Vector2( 0.340362, 0.535467 )
+<<<<<<< Updated upstream
 frames = SubResource( 39 )
 frame = 24
+=======
+frames = SubResource( 40 )
+frame = 22
+>>>>>>> Stashed changes
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
 position = Vector2( 975.545, 532.979 )
 rotation = 0.13439
 scale = Vector2( 0.340362, 0.535467 )
+<<<<<<< Updated upstream
 frames = SubResource( 39 )
 frame = 23
+=======
+frames = SubResource( 40 )
+frame = 21
+>>>>>>> Stashed changes
 playing = true
 
 [node name="Door" type="AnimatedSprite" parent="."]
 position = Vector2( 22.6087, 28.2969 )
 scale = Vector2( 0.774323, 0.696357 )
+<<<<<<< Updated upstream
 frames = SubResource( 40 )
+=======
+frames = SubResource( 41 )
+>>>>>>> Stashed changes
 frame = 4
 playing = true
 
