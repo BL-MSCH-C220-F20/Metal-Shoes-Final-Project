@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/f50e7e4fdd22ae1ed4984b5beb42a7d5.jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/6662bd2a462c14e9f994c739d528838a.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Assets/Splash/splash effect 4.png" type="Texture" id=10]
 [ext_resource path="res://Assets/splash 3.png" type="Texture" id=11]
 [ext_resource path="res://Assets/splash 1.png" type="Texture" id=12]
+[ext_resource path="res://Levels/Spawn.gd" type="Script" id=13]
+[ext_resource path="res://Player/Player_Container2.gd" type="Script" id=14]
+[ext_resource path="res://Levels/Exit_to_3.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -269,7 +272,7 @@ points = PoolVector2Array( 0, 0, 19, 0, 19, 3, 0, 3 )
 } ]
 0/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -295,6 +298,7 @@ position = Vector2( 697.237, 317.991 )
 rotation = -3.13636
 scale = Vector2( 0.227292, 0.446771 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="TileMap/TileMap/AnimatedSprite"]
@@ -309,6 +313,7 @@ position = Vector2( 935.4, 345.05 )
 rotation = -3.13636
 scale = Vector2( 0.238164, 0.358661 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="TileMap/TileMap/AnimatedSprite2"]
@@ -323,6 +328,7 @@ position = Vector2( 767.127, 414.951 )
 rotation = -3.13636
 scale = Vector2( 0.238164, 0.339806 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [node name="Area2D" parent="TileMap/TileMap/AnimatedSprite3" instance=ExtResource( 4 )]
@@ -331,6 +337,7 @@ playing = true
 position = Vector2( 571.496, 292.596 )
 scale = Vector2( 0.238164, 0.619768 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="TileMap/TileMap/AnimatedSprite4"]
@@ -345,6 +352,7 @@ position = Vector2( 199.095, 69.0489 )
 rotation = 1.5708
 scale = Vector2( 0.238164, 0.423153 )
 frames = SubResource( 10 )
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="TileMap/TileMap/AnimatedSprite5"]
@@ -359,7 +367,7 @@ position = Vector2( 139.605, 157.723 )
 rotation = -1.53764
 scale = Vector2( 0.238164, 0.423153 )
 frames = SubResource( 10 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="TileMap/TileMap/AnimatedSprite6"]
@@ -370,15 +378,21 @@ position = Vector2( 8.64697, 18.1086 )
 rotation = -2.32831e-10
 shape = SubResource( 11 )
 
-[node name="Spawn" type="AnimatedSprite" parent="."]
+[node name="Spawn" type="Node2D" parent="."]
+
+[node name="Spawn" type="AnimatedSprite" parent="Spawn"]
 position = Vector2( 385.006, 148.354 )
 scale = Vector2( 0.763907, 0.692788 )
 frames = SubResource( 12 )
 animation = "New Anim"
 frame = 2
 playing = true
+script = ExtResource( 13 )
 
-[node name="Exit" type="AnimatedSprite" parent="."]
+[node name="Exit_to_3" type="Area2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="Exit" type="AnimatedSprite" parent="Exit_to_3"]
 position = Vector2( 214.469, 588.713 )
 scale = Vector2( 0.763907, 0.692788 )
 frames = SubResource( 12 )
@@ -386,8 +400,16 @@ animation = "New Anim"
 frame = 6
 playing = true
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_3"]
+position = Vector2( 215.645, 598.175 )
+polygon = PoolVector2Array( -10.447, -10.1279, 9.79233, -10.1279, 10.1892, 10.1114, -10.447, 10.1114 )
+
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource( 14 )
 cell_size = Vector2( 19, 3 )
 format = 1
 tile_data = PoolIntArray( 917531, 0, 0, 1507361, 0, 0, 1507362, 0, 0, 1507363, 0, 0, 1835034, 0, 0, 1835035, 0, 0, 1900581, 0, 0, 1900582, 0, 0, 1900583, 0, 0, 2490383, 0, 0, 2687010, 0, 0, 2687011, 0, 0, 2687012, 0, 0, 3145754, 0, 0, 3211302, 0, 0, 3211303, 0, 0, 3276816, 0, 0, 3735575, 0, 0, 3735576, 0, 0, 3735591, 0, 0, 3932172, 0, 0, 3932173, 0, 0, 3932174, 0, 0, 3932196, 0, 0, 3997722, 0, 0, 4522008, 0, 0, 4522009, 0, 0, 5308459, 0, 0, 5308460, 0, 0, 5963810, 0, 0, 6488095, 0, 0, 7405612, 0, 0, 7536673, 0, 0, 7536674, 0, 0, 7798826, 0, 0, 8192024, 0, 0, 9175066, 0, 0, 9437226, 0, 0, 9437227, 0, 0, 10354712, 0, 0, 11141147, 0, 0 )
+
+[node name="Player_Container2" type="Node2D" parent="."]
+script = ExtResource( 14 )
+[connection signal="body_entered" from="Exit_to_3" to="Exit_to_3" method="_on_Exit_to_3_body_entered"]
